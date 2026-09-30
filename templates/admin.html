@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>INNOVXTHON — Admin</title><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head>
+<body class="admin-body">
+<div class="admin-wrap">
+<header class="admin-head"><div class="admin-brand">INNOVXTHON <span>'26 ADMIN</span></div><div class="admin-actions"><a class="admin-btn secondary" href="/admin/export.csv">EXPORT CSV</a><form method="post" action="/admin/logout"><button class="admin-btn secondary" type="submit">LOGOUT</button></form></div></header>
+<section class="admin-card"><h2>PARTICIPANT SCREEN CONTROL</h2><div class="active-team"><div><div class="active-team-number">{% if active_team %}INX {{ '%02d'|format(active_team) }}{% else %}NO ACTIVE TEAM{% endif %}</div>{% if active_state %}<div class="meta">{% if active_state.done %}DONE — 4 challenges assigned{% elif active_state.current_selection %}Round {{ active_state.round }} selected. Reset to open Round {{ active_state.round + 1 }}.{% else %}Waiting for this team to select a challenge in Round {{ active_state.round }}.{% endif %}</div>{% else %}<div class="meta">A participant must enter their team number first.</div>{% endif %}</div><div>{% if active_team and active_state and not active_state.done and active_state.current_selection %}<button id="reset-round" class="admin-btn" type="button">RESET PARTICIPANT SCREEN</button>{% endif %}</div></div></section>
+<section class="admin-card"><h2>ALL TEAM ASSIGNMENTS</h2><div class="table-wrap"><table><thead><tr><th>Team</th><th>Round 1</th><th>Round 2</th><th>Round 3</th><th>Round 4</th><th>Status</th></tr></thead><tbody>
+{% for t in teams %}<tr><td><strong>INX {{ '%02d'|format(t.team_no) }}</strong></td>{% for r in range(1,5) %}<td>{% if t.mapping.get(r) %}{{ '%02d'|format(t.mapping.get(r)) }} — {{ {1:'SPEAK IT',2:'LIVE WIRE',3:'SHOW YOUR WHY',4:'MAKE IT YOURS',5:'BREAK THE INPUT'}[t.mapping.get(r)] }}{% else %}—{% endif %}</td>{% endfor %}<td>{% if t.done %}<span class="badge done">DONE</span>{% elif t.mapping|length > 0 %}<span class="badge progress">ROUND {{ t.mapping|length + 1 }}</span>{% else %}<span class="badge none">NOT STARTED</span>{% endif %}</td></tr>{% endfor %}
+</tbody></table></div></section>
+<section class="admin-card"><h2>DANGER ZONE</h2><p class="meta">This permanently clears all four-round assignments for all 40 teams and starts a fresh event.</p><button id="reset-all" class="admin-btn danger" type="button">RESET ALL DATA</button></section>
+</div>
+<script>
+async function resetParticipant(){
+ const ok=confirm('Reset the participant screen for the active team? This will keep the selected challenge in the report and open the next round.'); if(!ok)return;
+ const res=await fetch('/api/admin/reset-participant',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({})});
+ const data=await res.json(); if(!res.ok){alert(data.message||'Reset failed.');return;} location.reload();
+}
+async function resetAll(){
+ const first=confirm('WARNING: This permanently deletes ALL team selections. Continue?'); if(!first)return;
+ const typed=prompt('Type RESET ALL to confirm:'); if(typed!=='RESET ALL'){alert('Reset cancelled.');return;}
+ const res=await fetch('/api/admin/reset-all',{method:'POST'}); const data=await res.json(); if(!res.ok){alert(data.message||'Reset failed.');return;} alert('All team data has been reset.'); location.reload();
+}
+const rr=document.getElementById('reset-round'); if(rr)rr.onclick=resetParticipant;
+document.getElementById('reset-all').onclick=resetAll;
+setInterval(()=>location.reload(),5000);
+</script>
+</body></html>

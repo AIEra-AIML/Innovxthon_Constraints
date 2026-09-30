@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>INNOVXTHON — Surprise Constraints</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <!-- TEAM ENTRY GATE -->
+    <section id="team-gate">
+        <div class="gate-box">
+            <div class="gate-brand">INNOVXTHON <span>'26</span></div>
+            <div class="gate-line"></div>
+            <div class="gate-title">ENTER YOUR TEAM NUMBER</div>
+            <form id="team-form">
+                <input id="team-number" type="text" inputmode="numeric" maxlength="2" autocomplete="off" placeholder="01" aria-label="Team number">
+                <button id="team-submit" type="submit">CONTINUE</button>
+            </form>
+            <div id="gate-error" class="gate-error"></div>
+        </div>
+    </section>
+    <div id="team-status-bar">TEAM <span id="current-team">INX 01</span> &nbsp;•&nbsp; ROUND <span class="round" id="current-round">1 / 4</span></div>
+    <div id="done-screen" class="round-done">
+        <div class="round-done-box">
+            <h2>DONE — 4 CHALLENGES ASSIGNED</h2>
+            <p>YOUR TEAM HAS COMPLETED ALL FOUR ROUNDS.</p><button id="change-team-button" type="button" style="margin-top:24px;padding:13px 22px;border:0;background:#1468b7;color:#fff;font:700 .75rem Space Grotesk,sans-serif;letter-spacing:.1em;cursor:pointer;">NEXT TEAM</button>
+        </div>
+    </div>
+
+
+    <!-- =====================================================
+         MAIN EXPERIENCE
+    ====================================================== -->
+
+    <main id="experience">
+
+        <!-- ================= LANDING ================= -->
+
+        <section class="landing">
+
+            <div class="landing-content">
+
+                <div class="brand">
+                    <span class="brand-main">INNOVXTHON</span>
+                    <span class="brand-year">'26</span>
+                </div>
+
+                <div class="landing-line"></div>
+
+                <h1>SURPRISE CONSTRAINT</h1>
+
+                <p class="scroll-text">
+                    SCROLL TO CONTINUE
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= SCREEN 1 ================= -->
+
+        <section class="card-screen">
+
+            <div class="cards-row">
+
+                <!-- CARD 01 -->
+
+                <article
+                    class="challenge-card"
+                    data-id="1"
+                    data-title="SPEAK IT"
+                >
+
+                    <div class="card-inner">
+
+                        <!-- FRONT -->
+
+                        <div class="card-face card-front">
+
+                            <div class="card-border"></div>
+
+                            <div class="corner top-left">
+                                <strong>01</strong>
+                                <span>IX</span>
+                            </div>
+
+                            <div class="corner bottom-right">
+                                <strong>01</strong>
+                                <span>IX</span>
+                            </div>
+
+                            <div class="front-center">
+                                <span class="mini-label">INNOVXTHON</span>
+
+                                <div class="x-symbol">X</div>
+
+                                <span class="card-number">01</span>
+                            </div>
+
+                            <div class="card-bottom">
+                                SURPRISE CONSTRAINT
+                            </div>
+
+                            <div class="used-stamp">
+                                USED
+                            </div>
+
+                        </div>
+
+
+                        <!-- BACK -->
+
+                        <div class="card-face card-back">
+
+                            <div class="back-pattern"></div>
+                            <div class="back-border"></div>
+
+                            <div class="back-corner top-left">01</div>
+                            <div class="back-corner bottom-right">01</div>
+
+                            <div class="back-content">
+
+                                <span class="back-small">
+                                    SURPRISE CONSTRAINT
+                                </span>
+
+                                <div class="back-icon">◉</div>
+
+                                <h2>SPEAK IT</h2>
+
+                                <div class="back-divider"></div>
+
+                                <h3>VOICE INTERACTION</h3>
+
+                                <p>
+                                    At least one important action
+                                    must be performed using voice input.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- CARD 02 -->
+
+                <article
+                    class="challenge-card"
+                    data-id="2"
+                    data-title="LIVE WIRE"
+                >
+
+                    <div class="card-inner">
+
+                        <div class="card-face card-front">
+
+                            <div class="card-border"></div>
+
+                            <div class="corner top-left">
+                                <strong>02</strong>
+                                <span>IX</span>
+                            </div>
+
+                            <div class="corner bottom-right">
+                                <strong>02</strong>
+                                <span>IX</span>
+                            </div>
+
+                            <div class="front-center">
+                                <span class="mini-label">INNOVXTHON</span>
+
+                                <div class="x-symbol">X</div>
+
+                                <span class="card-number">02</span>
+                            </div>
+
+                            <div class="card-bottom">
+                                SURPRISE CONSTRAINT
+                            </div>
+
+                            <div class="used-stamp">
+                                USED
+                            </div>
+
+                        </div>
+
+
+                        <div class="card-face card-back">
+
+                            <div class="back-pattern"></div>
+                            <div class="back-border"></div>
+
+                            <div class="back-corner top-left">02</div>
+                            <div class="back-corner bottom-right">02</div>
+
+                            <div class="back-content">
+
+                                <span class="back-small">
+                                    SURPRISE CONSTRAINT
+                                </span>
+
+                                <div class="back-icon">✦</div>
+
+                                <h2>LIVE WIRE</h2>
+
+                                <div class="back-divider"></div>
+
+                                <h3>REAL-TIME RESPONSE</h3>
+
+                                <p>
+                                    Your solution must provide a
+                                    real-time response, update or action.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= SCREEN 2 ================= -->
+
+        <section class="card-screen">
+
+            <div class="cards-row">
+
+                <!-- CARD 03 -->
+
+                <article
+                    class="challenge-card"
+                    data-id="3"
+                    data-title="SHOW YOUR WHY"
+                >
+
+                    <div class="card-inner">
+
+                        <div class="card-face card-front">
+
+                            <div class="card-border"></div>
+
+                            <div class="corner top-left">
+                                <strong>03</strong>
+                                <span>IX</span>
+                            </div>
+
+                            <div class="corner bottom-right">
+                                <strong>03</strong>
+                                <span>IX</span>
+                            </div>
+
+                            <div class="front-center">
+                                <span class="mini-label">INNOVXTHON</span>
+
+                                <div class="x-symbol">X</div>
+
+                                <span class="card-number">03</span>
+                            </div>
+
+                            <div class="card-bottom">
+                                SURPRISE CONSTRAINT
+                            </div>
+
+                            <div class="used-stamp">
+                                USED
+                            </div>
+
+                        </div>
+
+
+                        <div class="card-face card-back">
+
+                            <div class="back-pattern"></div>
+                            <div class="back-border"></div>
+
+                            <div class="back-corner top-left">03</div>
+                            <div class="back-corner bottom-right">03</div>
+
+                            <div class="back-content">
+
+                                <span class="back-small">
+                                    SURPRISE CONSTRAINT
+                                </span>
+
+                                <div class="back-icon">?</div>
+
+                                <h2>SHOW YOUR WHY</h2>
+
+                                <div class="back-divider"></div>
+
+                                <h3>EXPLAINABLE OUTPUT</h3>
+
+                                <p>
+                                    Your solution must explain the reason
+                                    behind at least one important result.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- CARD 04 -->
+
+                <article
+                    class="challenge-card"
+                    data-id="4"
+                    data-title="MAKE IT YOURS"
+                >
+
+                    <div class="card-inner">
+
+                        <div class="card-face card-front">
+
+                            <div class="card-border"></div>
+
+                            <div class="corner top-left">
+                                <strong>04</strong>
+                                <span>IX</span>
+                            </div>
+
+                            <div class="corner bottom-right">
+                                <strong>04</strong>
+                                <span>IX</span>
+                            </div>
+
+                            <div class="front-center">
+                                <span class="mini-label">INNOVXTHON</span>
+
+                                <div class="x-symbol">X</div>
+
+                                <span class="card-number">04</span>
+                            </div>
+
+                            <div class="card-bottom">
+                                SURPRISE CONSTRAINT
+                            </div>
+
+                            <div class="used-stamp">
+                                USED
+                            </div>
+
+                        </div>
+
+
+                        <div class="card-face card-back">
+
+                            <div class="back-pattern"></div>
+                            <div class="back-border"></div>
+
+                            <div class="back-corner top-left">04</div>
+                            <div class="back-corner bottom-right">04</div>
+
+                            <div class="back-content">
+
+                                <span class="back-small">
+                                    SURPRISE CONSTRAINT
+                                </span>
+
+                                <div class="back-icon">✦</div>
+
+                                <h2>MAKE IT YOURS</h2>
+
+                                <div class="back-divider"></div>
+
+                                <h3>PERSONALIZATION</h3>
+
+                                <p>
+                                    Let the user customize at least one
+                                    important feature of your solution.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= SCREEN 3 ================= -->
+
+        <section class="card-screen single-card-screen">
+
+            <div class="cards-row">
+
+                <!-- CARD 05 -->
+
+                <article
+                    class="challenge-card"
+                    data-id="5"
+                    data-title="BREAK THE INPUT"
+                >
+
+                    <div class="card-inner">
+
+                        <div class="card-face card-front">
+
+                            <div class="card-border"></div>
+
+                            <div class="corner top-left">
+                                <strong>05</strong>
+                                <span>IX</span>
+                            </div>
+
+                            <div class="corner bottom-right">
+                                <strong>05</strong>
+                                <span>IX</span>
+                            </div>
+
+                            <div class="front-center">
+                                <span class="mini-label">INNOVXTHON</span>
+
+                                <div class="x-symbol">X</div>
+
+                                <span class="card-number">05</span>
+                            </div>
+
+                            <div class="card-bottom">
+                                SURPRISE CONSTRAINT
+                            </div>
+
+                            <div class="used-stamp">
+                                USED
+                            </div>
+
+                        </div>
+
+
+                        <div class="card-face card-back">
+
+                            <div class="back-pattern"></div>
+                            <div class="back-border"></div>
+
+                            <div class="back-corner top-left">05</div>
+                            <div class="back-corner bottom-right">05</div>
+
+                            <div class="back-content">
+
+                                <span class="back-small">
+                                    SURPRISE CONSTRAINT
+                                </span>
+
+                                <div class="back-icon">+</div>
+
+                                <h2>BREAK THE INPUT</h2>
+
+                                <div class="back-divider"></div>
+
+                                <h3>ALTERNATIVE INTERACTION</h3>
+
+                                <p>
+                                    Support at least two different ways
+                                    of interacting with your solution.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         FLYING CARD LAYER
+    ====================================================== -->
+
+    <div id="animation-layer"></div>
+
+
+    <!-- =====================================================
+         FULLSCREEN CHALLENGE
+    ====================================================== -->
+
+    <section id="fullscreen-challenge">
+
+        <div class="fullscreen-inner">
+
+            <span class="full-number" id="full-number">
+                01
+            </span>
+
+            <div class="full-line"></div>
+
+            <p class="full-eyebrow">
+                SURPRISE CONSTRAINT
+            </p>
+
+            <h1 id="full-title">
+                SPEAK IT
+            </h1>
+
+            <h2 id="full-subtitle">
+                VOICE INTERACTION
+            </h2>
+
+            <p id="full-description">
+                At least one important action must be performed
+                using voice input.
+            </p>
+
+            <button id="back-button">
+                BACK TO CARDS
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
